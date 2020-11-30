@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:qr_reader/pages/mapas_page.dart';
 import 'package:qr_reader/pages/direcciones_page.dart';
 
+import 'package:qr_reader/providers/db_provider.dart';
 import 'package:qr_reader/providers/ui_provider.dart';
 
 import 'package:qr_reader/widgets/custom_navigatorbar.dart';
@@ -41,6 +42,13 @@ class _HomePageBody extends StatelessWidget {
 
     // EL CURRENT INDEX ES LO QUE SE NECESITA CAMBIAR PARA MOSTRAR LA PAGINA RESPECTIVA
     final currentIndex = uiProvider.selectedMenuOpt;
+
+    // TODO: Temporal leer la base de datos
+    // final tempScan = new ScanModel(valor: 'http://google.com');
+    // DBProvider.db.nuevoScan(tempScan);
+    // DBProvider.db.getScanById(1).then((scan) => print(scan.valor));
+    // DBProvider.db.getTodosLosScans().then( print );
+    // DBProvider.db.deleteAllScans().then( print );
 
     switch (currentIndex) {
       case 0:
