@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:qr_reader/pages/home_page.dart';
 import 'package:qr_reader/pages/mapa_page.dart';
+import 'package:qr_reader/providers/scan_list_provider.dart';
 import 'package:qr_reader/providers/ui_provider.dart';
 
 void main() => runApp(MyApp());
@@ -13,14 +14,15 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (BuildContext context) => new UiProvider()),
+        ChangeNotifierProvider(create: (BuildContext context) => new ScanListProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'QR Reader',
         initialRoute: 'home',
         routes: {
-          'home'    : ( BuildContext context ) => HomePage(),
-          'mapa'    : ( BuildContext context )  => MapaPage()
+          'home'    : ( BuildContext context )  =>  HomePage(),
+          'mapa'    : ( BuildContext context )  =>  MapaPage()
         },
         theme: ThemeData(
           primaryColor: Colors.deepPurple,
